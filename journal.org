@@ -1,0 +1,79 @@
+#+TITLE: Semantest Browser - Development Journal
+#+AUTHOR: Semantest Team
+#+DATE: [2024-01-07]
+
+* Overview
+
+This repository contains the core browser automation framework for Semantest. It provides the foundation for semantic web automation, moving beyond fragile CSS selectors to intelligent, contract-driven automation.
+
+* Repository History
+
+** Monorepo Separation (2024-01-07)
+
+This repository was extracted from the original chatgpt-buddy monorepo as part of Phase 8A of the Semantest platform evolution. The separation preserves the complete git history of the web-buddy/packages/core directory.
+
+*** Key Changes
+- Extracted from =web-buddy/packages/core/= directory in the monorepo
+- Now published as =@semantest/browser= on npm
+- Repository URL: https://github.com/semantest/browser
+- Part of the semantest organization
+- Core dependency for all Semantest implementations
+
+*** Post-Separation Setup Required
+1. Update package.json dependencies from workspace references to npm packages
+2. Set up GitHub Actions CI/CD workflow
+3. Configure npm publishing with NPM_TOKEN secret
+4. Update README with proper documentation
+
+** Original Development
+
+Originally developed as web-buddy-core, this package evolved from simple browser automation to a sophisticated semantic automation framework. Key milestones include:
+
+- Initial WebSocket communication with browser extensions
+- Introduction of semantic selectors
+- Contract-based element identification
+- AI-powered element discovery
+- Multi-browser support architecture
+
+* Technical Architecture
+
+** Core Components
+
+*** Browser Client
+- WebSocket client for browser communication
+- Message protocol implementation
+- Connection management and reconnection
+- Event-driven architecture
+
+*** Semantic Selectors
+- Natural language element selection
+- Context-aware element finding
+- Fallback strategies
+- Performance optimization
+
+*** Contract System
+- Element contracts definition
+- Contract validation
+- Version management
+- Breaking change detection
+
+*** Action Engine
+- High-level action abstractions
+- Retry logic and error handling
+- Action composition
+- Parallel execution support
+
+** Key Features
+- Framework-agnostic design
+- TypeScript-first with full type safety
+- Extensible plugin system
+- Comprehensive error handling
+- Performance monitoring
+
+* Future Roadmap
+
+- AI-powered self-healing selectors
+- Visual regression testing integration
+- Multi-tab orchestration
+- Cloud browser support
+- WebDriver BiDi protocol support
