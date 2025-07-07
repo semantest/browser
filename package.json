@@ -54,5 +54,12 @@
     "dist/**/*",
     "README.md",
     "LICENSE"
-  ]
+  ],
+  "repository": {
+    "url": "https://github.com/semantest/browser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/semantest/browser/issues"
+  },
+  "homepage": "https://github.com/semantest/browser"
 }
