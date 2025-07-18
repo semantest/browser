@@ -1,6 +1,6 @@
 {
-  "name": "@web-buddy/core",
-  "version": "1.0.0",
+  "name": "@semantest/browser",
+  "version": "2.0.0",
   "description": "Generic web automation framework with event-driven architecture",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,13 +12,21 @@
     "clean": "rimraf dist"
   },
   "keywords": [
+    "semantest",
     "web-automation",
     "browser-extension",
     "event-driven",
     "typescript-eda"
   ],
-  "author": "rydnr@acm-sl.org",
+  "author": "Semantest Team <team@semantest.com>",
   "license": "GPL-3.0",
+  "homepage": "https://semantest.com/packages/browser",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/semantest/semantest.git",
+    "directory": "packages/browser"
+  },
+  "bugs": "https://github.com/semantest/semantest/issues",
   "dependencies": {
     "uuid": "^9.0.0"
   },
