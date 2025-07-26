@@ -18,6 +18,7 @@
 */
 
 import { v4 as uuidv4 } from 'uuid';
+import { Utils } from '@semantest/core';
 
 /**
  * Base interface for all Web-Buddy events
@@ -63,16 +64,11 @@ export abstract class BaseEvent implements WebBuddyEvent {
     public readonly website?: string,
     public readonly tabId?: number
   ) {
-    this.correlationId = correlationId || this.generateCorrelationId();
+    this.correlationId = correlationId || Utils.generateCorrelationId();
     this.eventId = this.generateEventId();
   }
   
-  /**
-   * Generates a unique correlation ID for event tracking across system boundaries
-   */
-  private generateCorrelationId(): string {
-    return `web-buddy-${Date.now()}-${uuidv4().substr(0, 8)}`;
-  }
+  // Correlation ID generation now handled by Utils.generateCorrelationId()
   
   /**
    * Generates a unique event ID for this specific event instance

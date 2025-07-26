@@ -18,6 +18,7 @@
 */
 
 import { v4 as uuidv4 } from 'uuid';
+import { Utils } from '@semantest/core';
 import { EventResponse, WebBuddyEvent } from './events/base';
 import { AutomationRequestedEvent, AutomationEventFactory } from './events/automation';
 
@@ -81,7 +82,7 @@ export class WebBuddyClient {
       timeout?: number;
     }
   ): Promise<any> {
-    const correlationId = options?.correlationId || this.generateCorrelationId();
+    const correlationId = options?.correlationId || Utils.generateCorrelationId();
     const timeout = options?.timeout || this.timeout;
     
     const requestPayload = {
@@ -202,7 +203,7 @@ export class WebBuddyClient {
     return {
       type: eventType,
       payload: messageData[eventType] || messageData,
-      correlationId: options?.correlationId || this.generateCorrelationId(),
+      correlationId: options?.correlationId || Utils.generateCorrelationId(),
       timestamp: new Date(),
       eventId: `legacy-${Date.now()}-${uuidv4().substr(0, 8)}`,
       tabId: options?.tabId
@@ -302,12 +303,7 @@ export class WebBuddyClient {
     }
   }
   
-  /**
-   * Generates a unique correlation ID for message tracking
-   */
-  generateCorrelationId(): string {
-    return `web-buddy-${Date.now()}-${uuidv4().substr(0, 8)}`;
-  }
+  // Correlation ID generation now handled by Utils.generateCorrelationId()
   
   /**
    * Get current connection status and transport information
